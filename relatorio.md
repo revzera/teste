@@ -139,21 +139,20 @@ Essas funções, em conjunto, permitem processar e tratar um arquivo de texto, a
 
 ### 2.3. Função *Hash* e *Rerashing*
 
-A função hash (hashing) pode ser aplicada no projeto para mapear as palavras identificadas no livro para um conjunto finito de índices em uma estrutura de dados conhecida como Dicionário Dinâmico. Cada palavra seria tratada como uma chave e passaria por essa função para determinar o índice em que deve ser armazenada na tabela de hash.
+A função hash é essencial para a eficiência do projeto, pois ela é responsável por mapear as palavras identificadas no livro para índices específicos em uma tabela de hash. Isso é alcançado através de um cálculo simples, no qual a função hash pega o conteúdo da palavra e o transforma em um número inteiro correspondente ao índice onde a palavra será armazenada na tabela.
 
-Por exemplo, ao processar uma palavra do livro, você pode aplicar uma função hash para calcular um índice com base no conteúdo da palavra. Essa função hash dividiria a palavra pelo tamanho da tabela de hash e retornaria o resto da divisão como o índice onde a palavra seria armazenada. Isso permitiria que você associasse eficientemente cada palavra a uma página ou a informações relevantes.
+Por exemplo, ao processar uma palavra do livro, a função hash realiza um cálculo, geralmente uma operação de divisão, que resulta em um índice único para aquela palavra na tabela de hash. Isso significa que cada palavra será associada a um índice específico, permitindo que a recuperação de informações seja altamente eficiente. Sem a função hash, a busca por palavras no livro seria muito mais lenta, pois seria necessário percorrer todo o texto em busca da palavra desejada.
 
-A função hash é fundamental para garantir uma distribuição uniforme das palavras na tabela de hash, minimizando colisões e permitindo o acesso eficiente às informações associadas a cada palavra.
+Além disso, a função hash desempenha um papel fundamental na minimização de colisões, ou seja, situações em que duas palavras diferentes são mapeadas para o mesmo índice. Uma boa função hash distribui as palavras de forma uniforme na tabela de hash, reduzindo as colisões e tornando o acesso aos dados mais rápido.
 
-Já o rehashing pode ser aplicado quando a tabela de hash atinge um fator de carga crítico, ou seja, quando está prestes a ficar cheia demais. Nesse ponto, você pode iniciar o processo de rehashing para redimensionar a tabela de hash e redistribuir as palavras.
+Já o rehashing é uma técnica crucial para garantir que a tabela de hash continue a funcionar de maneira eficiente à medida que mais palavras são processadas. Ele é acionado quando a tabela de hash atinge um fator de carga crítico, que é uma medida da quão cheia a tabela está. Um fator de carga próximo a 1.0 significa que a tabela está quase cheia demais, o que pode levar a colisões frequentes e a um desempenho insatisfatório.
 
-Por exemplo, se o seu Dicionário Dinâmico estiver atingindo um fator de carga próximo a 1.0, isso significa que a tabela de hash está quase completamente cheia. Para evitar colisões excessivas e manter um bom desempenho, você pode iniciar o rehashing.
+Quando o rehashing é iniciado, uma nova tabela de hash maior é criada. Geralmente, o tamanho da nova tabela é aproximadamente o dobro do tamanho da tabela original, e normalmente é escolhido como um número primo próximo para garantir uma distribuição uniforme. Em seguida, todas as palavras da tabela original são redistribuídas para a nova tabela usando a função hash atualizada para o novo tamanho.
 
-O rehashing envolveria a criação de uma nova tabela de hash com um tamanho maior, geralmente um número primo próximo do dobro do tamanho da tabela original. Em seguida, você iteraria pelas palavras na tabela original e, para cada palavra, calcularia um novo índice com base na função hash atualizada para a nova tabela. As palavras seriam então redistribuídas na nova tabela.
+Essa redistribuição de palavras para a nova tabela alivia a carga na tabela original, reduzindo as colisões e melhorando o desempenho global da estrutura de dados. O rehashing é uma operação que ocorre em segundo plano, de modo que o usuário final não precisa se preocupar com isso, mas é fundamental para manter o sistema funcionando de maneira eficaz, mesmo com grandes volumes de dados.
 
-O rehashing é uma técnica importante para garantir que a tabela de hash mantenha um fator de carga aceitável, mesmo à medida que mais palavras são processadas. Isso evita que a tabela fique superlotada, o que pode levar a um desempenho ruim.
+Em resumo, a função hash é responsável por mapear palavras para índices na tabela de hash, permitindo uma recuperação eficiente de informações, enquanto o rehashing é uma técnica vital para redimensionar a tabela de hash e manter o desempenho conforme o número de palavras cresce.
 
-Em resumo, a função hash e o rehashing desempenham papéis essenciais no projeto, permitindo que as palavras do livro sejam eficientemente mapeadas e armazenadas em uma estrutura de dados que facilita a busca e recuperação de informações. Além disso, o rehashing garante que a estrutura de dados permaneça eficiente mesmo quando o número de palavras cresce.
 
 
 <div id='resultados'/>
