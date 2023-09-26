@@ -23,9 +23,9 @@
 
     2.3. [Função *Hash* e *Rerashing*](#hash)
 
-3. [Estudo e resultados](#resultados)
+3. [Estudo e resultados](#estudosresultados)
 
-    3.1. [](#)
+    3.1. [Resultados](#resultados)
 
 4. [Conclusão](#conclusao)
 
@@ -86,7 +86,7 @@ Essas funções desempenham papéis específicos no processamento e análise dos
 
 #### 2.2. Tratamento das palavras
 
-
+Antes de construir o Índice Remissivo, é essencial preparar o texto original para garantir uma análise precisa e relevante. O tratamento das palavras desempenha um papel fundamental nesse processo. Durante esta etapa, várias operações são realizadas para limpar e estruturar o texto de forma eficiente.
 
 <div id='stopwords'/>
 
@@ -135,7 +135,7 @@ Funções para Tratar o Livro:
 
 Essas funções, em conjunto, permitem processar e tratar um arquivo de texto, aplicando transformações nas palavras e removendo aquelas que estão no dicionário de stop words.
 
-<div id='hashmap'/>
+<div id='hash'/>
 
 ### 2.3. Função *Hash* e *Rerashing*
 
@@ -153,16 +153,42 @@ Essa redistribuição de palavras para a nova tabela alivia a carga na tabela or
 
 Em resumo, a função hash é responsável por mapear palavras para índices na tabela de hash, permitindo uma recuperação eficiente de informações, enquanto o rehashing é uma técnica vital para redimensionar a tabela de hash e manter o desempenho conforme o número de palavras cresce.
 
-
-
-<div id='resultados'/>
+<div id='estudosresultados'/>
 
 ## 3. Estudo e resultados
 
---
+Após a conclusão bem-sucedida da implementação do Índice Remissivo, conforme descrito anteriormente, procedemos à utilização de uma base de dados de teste contendo os textos completos de três obras literárias:
+
+   - As Aventuras de Huckleberry Finn.
+   - O Guarani.
+   - Paralelismo em visão natural e artificial.
+
+<div id='resultados'/>
+
+### 3.1. Resultados
+
+|                | Huckleberry   | Guarani       |  Paralelismo  |  Média               |
+| :-----------:  | :-----------: | :-----------: | :-----------: |  :-----------:       |
+|N° de elementos | 11.688        | 11.444        | 8.382         | 10.504        |
+|N° de inserções | 11.688        | 11.444        | 8.382         | 10.504        |
+|N° de buscas    | 109.116       | 118.504       | 135.734       | 121.118       | 
+
+Ao realizar estudos e aplicar o código desenvolvido, obtivemos índices remissivos para cada uma das obras, com todas as funcionalidades esperadas, com exceção daquelas relacionadas ao tratamento de caracteres acentuados, dada a complexidade e diversidade da língua portuguesa, que inclui estes caracteres como acentos agudos, circunflexos, entre outros.
+
+Apesar do sucesso na implementação das funcionalidades principais do Índice Remissivo para as obras literárias mencionadas, identificamos um desafio relacionado ao tratamento de caracteres acentuados. O nosso código ainda não incorpora uma solução completa para lidar com esses caracteres, o que afeta a capacidade de indexação e busca de palavras acentuadas com precisão.
+
+Embora tenhamos alcançado resultados satisfatórios na indexação das palavras e na criação do Índice Remissivo, estamos cientes de que aprimorar a funcionalidade de tratamento de caracteres acentuados é um próximo passo importante. Pretendemos explorar abordagens para a resolução desse desafio, como a normalização de caracteres acentuados para suas formas não acentuadas, para que as palavras possam ser indexadas e buscadas de maneira eficaz, independentemente da presença de acentos.
 
 <div id='conclusao'/>
 
 ## 4. Conclusão
 
---
+Neste projeto, empreendemos uma jornada na construção de um Índice Remissivo destinado a facilitar a busca e recuperação de informações específicas em documentos extensos. Ao longo desse processo, abordamos conceitos fundamentais de processamento de texto, armazenamento de dados e métricas estatísticas, resultando em uma ferramenta capaz de organizar conteúdo complexo de maneira acessível.
+
+Durante o desenvolvimento, aprofundamo-nos na identificação e tratamento das chamadas "stop words", palavras comuns que geralmente não contribuem significativamente para a relevância de um texto. A aplicação eficaz do cálculo TF-IDF, que combina a frequência de um termo em um documento com sua raridade em uma coleção mais ampla de documentos, permitiu-nos identificar as palavras mais importantes em um contexto específico, melhorando a precisão da busca.
+
+Embora tenhamos obtido sucesso na construção do Índice Remissivo e na indexação das obras literárias selecionadas, reconhecemos a presença de um desafio técnico significativo relacionado ao tratamento de caracteres acentuados na língua portuguesa. Este desafio afeta a precisão da busca de palavras acentuadas e representa uma oportunidade importante de melhoria em trabalhos futuros.
+
+Este projeto não apenas nos permitiu aplicar princípios de Tipos Abstratos de Dados (TAD) e técnicas de armazenamento, incluindo dicionários estáticos e dinâmicos, mas também nos desafiou a enfrentar questões de processamento de linguagem natural, o que é fundamental em muitos contextos de análise de texto.
+
+Em suma, este estudo nos levou a criar uma ferramenta valiosa para a organização e recuperação de conhecimento em documentos extensos, resolvendo os desafios remanescentes e refinando nosso Índice Remissivo para atender às necessidades cada vez mais complexas de processamento de texto e busca de informações.
