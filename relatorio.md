@@ -155,8 +155,6 @@ O rehashing é uma técnica importante para garantir que a tabela de hash manten
 
 Em resumo, a função hash e o rehashing desempenham papéis essenciais no projeto, permitindo que as palavras do livro sejam eficientemente mapeadas e armazenadas em uma estrutura de dados que facilita a busca e recuperação de informações. Além disso, o rehashing garante que a estrutura de dados permaneça eficiente mesmo quando o número de palavras cresce.
 
-#### 2.3.1 Dicionário Dinâmico (*Hash Map*):
-
 
 <div id='resultados'/>
 
